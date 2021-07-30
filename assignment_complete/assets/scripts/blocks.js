@@ -27,7 +27,8 @@ Blockly.JavaScript['bot_block'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   console.log(statements_ask_me_a_question);
   var code =  `
-	${statements_ask_me_a_question}
+	${statements_ask_me_a_question};
+	var isBot = true;
   `;
   return code;
 };
@@ -99,7 +100,8 @@ function runcode() {
   } catch (e) {
     console.error(e);
   }
-  redrawUi();
+  if(isBot)
+     redrawUi();
 }
 
 function reset() {
